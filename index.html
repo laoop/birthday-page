@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生日快乐！</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.2/dist/index.umd.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .message {
+            position: absolute;
+            text-align: center;
+            font-size: 2em;
+            z-index: 10;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">🎉 祝阿磊26岁生日快乐！愿你天天开心我的宝贝！爱你的小猫🎂</div>
+    <canvas id="fireworksCanvas"></canvas>
+    <script>
+        const container = document.getElementById('fireworksCanvas');
+        const fireworks = new Fireworks.default(container, {
+            autoresize: true,
+            opacity: 0.5,
+            acceleration: 1.05,
+            friction: 0.97,
+            gravity: 1.5,
+            particles: 200,
+            trace: 3,
+            explosion: 5,
+            intensity: 5,
+            flickering: 50,
+            lineWidth: { min: 1, max: 3 },
+            hue: { min: 0, max: 360 },
+        });
+        fireworks.start();
+    </script>
+</body>
+</html>
